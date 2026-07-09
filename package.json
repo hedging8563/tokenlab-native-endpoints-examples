@@ -1,0 +1,9 @@
+{
+  "name": "tokenlab-native-endpoints-examples",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --check examples/list-models.mjs && node --check examples/responses.mjs && node --check examples/anthropic-messages.mjs && node --check examples/gemini-generate-content.mjs"
+  }
+}
