@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --check examples/list-models.mjs && node --check examples/chat-completions.mjs && node --check examples/responses.mjs && node --check examples/anthropic-messages.mjs && node --check examples/gemini-generate-content.mjs"
+    "test": "node --check examples/list-models.mjs && node --check examples/chat-completions.mjs && node --check examples/responses.mjs && node --check examples/anthropic-messages.mjs && node --check examples/gemini-generate-content.mjs && node --check scripts/verify-public-contract.mjs",
+    "verify:contract": "node scripts/verify-public-contract.mjs"
   }
 }
