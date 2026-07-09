@@ -14,8 +14,12 @@ const response = await fetch("https://api.tokenlab.sh/v1beta/models/gemini-3.5-f
           }
         ]
       }
-    ]
+    ],
+    generationConfig: {
+      maxOutputTokens: 32
+    }
   })
 });
 
+if (!response.ok) throw new Error(`Gemini generateContent failed with ${response.status}`);
 console.log(await response.json());

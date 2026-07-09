@@ -6,7 +6,7 @@ const response = await fetch("https://api.tokenlab.sh/v1/messages", {
   },
   body: JSON.stringify({
     model: "claude-sonnet-5",
-    max_tokens: 256,
+    max_tokens: 32,
     messages: [
       {
         role: "user",
@@ -16,4 +16,5 @@ const response = await fetch("https://api.tokenlab.sh/v1/messages", {
   })
 });
 
+if (!response.ok) throw new Error(`Anthropic Messages failed with ${response.status}`);
 console.log(await response.json());

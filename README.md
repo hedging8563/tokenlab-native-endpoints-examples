@@ -13,6 +13,7 @@ npm test
 
 ## Examples
 
+- `examples/chat-completions.mjs`
 - `examples/responses.mjs`
 - `examples/anthropic-messages.mjs`
 - `examples/gemini-generate-content.mjs`
