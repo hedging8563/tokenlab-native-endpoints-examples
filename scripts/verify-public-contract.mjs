@@ -9,7 +9,16 @@ const requiredPaths = [
   "/v1/models"
 ];
 
-const requiredModels = ["gpt-5.5", "claude-sonnet-5", "gemini-3.5-flash"];
+const defaultModels = ["gpt-5.5", "claude-sonnet-5", "gemini-3.5-flash"];
+
+const requestedModels = process.env.INPUT_MODELS?.trim();
+const requiredModels = requestedModels
+  ? [...new Set(requestedModels.split(",").map((model) => model.trim()).filter(Boolean))]
+  : defaultModels;
+
+if (requestedModels && requiredModels.length === 0) {
+  throw new Error("models input must include at least one logical model ID");
+}
 
 async function fetchJson(url) {
   const response = await fetch(url);

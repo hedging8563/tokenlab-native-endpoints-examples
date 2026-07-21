@@ -1,0 +1,22 @@
+name: TokenLab Public API Contract Check
+description: Verify TokenLab public endpoint contracts and logical model IDs.
+author: TokenLab
+
+inputs:
+  models:
+    description: Comma-separated TokenLab logical model IDs to verify.
+    required: false
+    default: gpt-5.5,claude-sonnet-5,gemini-3.5-flash
+
+runs:
+  using: composite
+  steps:
+    - name: Verify TokenLab public API contract
+      shell: bash
+      env:
+        INPUT_MODELS: ${{ inputs.models }}
+      run: node "$GITHUB_ACTION_PATH/scripts/verify-public-contract.mjs"
+
+branding:
+  icon: check-circle
+  color: yellow

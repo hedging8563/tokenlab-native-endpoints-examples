@@ -21,4 +21,18 @@ jobs:
           node-version: "22"
           package-manager-cache: false
       - run: npm test
-      - run: npm run verify:contract
+      - name: Verify the default public contract through the local action
+        uses: ./
+      - name: Verify selected logical models through the local action
+        uses: ./
+        with:
+          models: gpt-5.5,claude-sonnet-5
+      - name: Confirm a missing logical model fails
+        id: missing_model
+        continue-on-error: true
+        uses: ./
+        with:
+          models: __tokenlab_contract_missing_model__
+      - name: Assert the missing-model check failed
+        if: steps.missing_model.outcome != 'failure'
+        run: exit 1
