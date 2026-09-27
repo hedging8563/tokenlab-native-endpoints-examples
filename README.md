@@ -32,12 +32,14 @@ Use the public contract check in another repository:
 
 ```yaml
 steps:
-  - uses: hedging8563/tokenlab-native-endpoints-examples@v1
+  - uses: hedging8563/tokenlab-native-endpoints-examples@v1.1.0
     with:
       models: gpt-5.5,claude-sonnet-5
 ```
 
 `models` is optional. It accepts comma-separated TokenLab logical model IDs and defaults to the model IDs used by this repository's examples. The OpenAPI document and public model catalog URLs are fixed by the action.
+
+Version `v1.1.0` adds the native System One endpoint and Jev to the default contract check. The historical `v1` tag is unchanged; pin `v1.1.0` to use the updated checks.
 
 ## Links
 

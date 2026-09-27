@@ -6,7 +6,7 @@ inputs:
   models:
     description: Comma-separated TokenLab logical model IDs to verify.
     required: false
-    default: gpt-5.5,claude-sonnet-5,gemini-3.5-flash
+    default: gpt-5.5,claude-sonnet-5,gemini-3.5-flash,jev-1.13
 
 runs:
   using: composite
