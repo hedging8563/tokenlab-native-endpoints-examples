@@ -20,10 +20,11 @@ npm test
 - `examples/anthropic-messages.mjs`
 - `examples/gemini-generate-content.mjs`
 - `examples/list-models.mjs`
+- `examples/systemone.mjs` — synchronous Jev typed decisions; checks the public operation contract before a billable request. Requires `TOKENLAB_API_KEY`. It preserves answers/usage and never executes the classified action.
 
 ## Compatibility Check
 
-`npm run verify:contract` checks the live OpenAPI document for Chat Completions, Responses, Anthropic Messages, Gemini generateContent, and model discovery, then verifies the example model IDs against the public catalog. GitHub Actions repeats this check daily.
+`npm run verify:contract` checks the live OpenAPI document for Chat Completions, Responses, Anthropic Messages, Gemini generateContent, System One decisions, and model discovery, then verifies the example model IDs against the public catalog. This check makes no paid inference calls. GitHub Actions repeats it daily.
 
 ## GitHub Action
 

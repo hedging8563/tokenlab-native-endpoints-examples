@@ -6,10 +6,11 @@ const requiredPaths = [
   "/v1/responses",
   "/v1/messages",
   "/v1beta/models/{model}:generateContent",
-  "/v1/models"
+  "/v1/models",
+  "/v1/systemone"
 ];
 
-const defaultModels = ["gpt-5.5", "claude-sonnet-5", "gemini-3.5-flash"];
+const defaultModels = ["gpt-5.5", "claude-sonnet-5", "gemini-3.5-flash", "jev-1.13"];
 
 const requestedModels = process.env.INPUT_MODELS?.trim();
 const requiredModels = requestedModels
@@ -21,7 +22,7 @@ if (requestedModels && requiredModels.length === 0) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url);
+  const response = await fetch(url, { signal: AbortSignal.timeout(30_000) });
   if (!response.ok) throw new Error(`${url} returned ${response.status}`);
   return response.json();
 }
