@@ -1,4 +1,4 @@
-const OPENAPI_URL = "https://docs.tokenlab.sh/openapi.json";
+const OPENAPI_URL = "https://tokenlab.sh/docs/openapi.json";
 const MODELS_URL = "https://api.tokenlab.sh/v1/models";
 
 const requiredPaths = [

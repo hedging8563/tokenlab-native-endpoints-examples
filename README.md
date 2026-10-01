@@ -43,6 +43,6 @@ Version `v1.1.0` adds the native System One endpoint and Jev to the default cont
 
 ## Links
 
-- TokenLab docs: https://docs.tokenlab.sh
-- API formats: https://docs.tokenlab.sh/guides/api-formats
+- TokenLab docs: https://tokenlab.sh/docs
+- API formats: https://tokenlab.sh/docs/en/guides/api-formats
 - Model catalog: https://api.tokenlab.sh/v1/models
